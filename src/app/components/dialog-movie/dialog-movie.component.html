@@ -1,0 +1,42 @@
+<ng-container  class="contenedor" *ngIf="movie">
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close class="botones-color" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-dialog-actions>
+
+    <div *ngIf="movie.background" class="bg-image" 
+    [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.background +')'}"></div>
+    <div *ngIf="!movie.background" class="imagen-fondo" 
+    [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.poster +')'}"></div>
+    
+    <!-- <h2 mat-dialog-title>Install Angular</h2> -->
+    <mat-dialog-content class="mat-typography">
+        <br>
+        <h1 class="fs-2 py-2">{{movie.title}}</h1>
+        <p class="fs-4 py-2">Fecha de Lanzamiento: {{movie.date | date: 'dd/MMMM/yyyy'}}</p>
+        <ng-container *ngFor="let gen of movie.genres, let isLast=last">
+          <span class="fs-4 py-2">{{gen.name}}{{isLast ? '' : ', '}}</span>
+        </ng-container>
+    
+        <ng-container *ngIf="movie.overview; else default">
+          <p class="fs-4 py-2 pe-4">{{movie.overview}}</p>
+        </ng-container>
+    
+        <ng-template #default>
+          <p>No descripción todavia</p>
+        </ng-template>
+        <br><br>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="start">
+        <button mat-icon-button class="botones-color">
+            <mat-icon>add</mat-icon> <br>
+            Mi lista
+        </button>
+        <button mat-icon-button class="botones-color">
+            <mat-icon>thumb_up</mat-icon> <br>
+            Votar
+        </button>
+    </mat-dialog-actions>
+</ng-container>

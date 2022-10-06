@@ -1,0 +1,34 @@
+.contenedor {
+    width: 100%;
+    height: 100%;
+  }
+
+  .imagen-fondo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 40%;
+  }
+
+  .color-black{
+    background-color: black;
+  }
+  
+  .bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 40%;
+  }
+
+
+//   p, h1, span {
+//     color: white;
+//   }
+
+
+  .mat-dialog-container{
+    background-color: black;
+  }

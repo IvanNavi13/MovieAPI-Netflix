@@ -1,0 +1,11 @@
+<h1>Sugerencias...</h1>
+
+<mat-grid-list cols="5">
+    <mat-grid-tile *ngFor="let movie of observableMovieService">
+        <!-- <p>{{movie.id}}</p> -->
+        <!-- <img [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster"> -->
+        <mat-card class="example-card" (click)="openDialog(movie.id)">
+            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster" alt="...">
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

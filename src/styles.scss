@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+// @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+// @include mat.all-component-themes($my-app-theme);
+// $default-primary: ( 50: var(--primary-color),
+//  100: var(--primary-color),
+//  200: var(--primary-color),
+//  300: var(--primary-color),
+//  400: var(--primary-color),
+//  500: var(--primary-color),
+//  600: var(--primary-color),
+//  700: var(--primary-color),
+//  800: var(--primary-color),
+//  900: var(--primary-color),
+//  contrast: ( 50: var(--contrast-light),
+//  100: var(--contrast-light),
+//  200: var(--contrast-light),
+//  300: var(--contrast-light),
+//  400: var(--contrast-light),
+//  500: var(--contrast-light),
+//  600: var(--contrast-light),
+//  700: var(--contrast-light),
+//  800: var(--contrast-light),
+//  900: var(--contrast-light)));
+// $my-app-primary: mat.define-palette($default-primary);
+// $my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $my-app-warn: mat.define-palette(mat.$red-palette);
+// $my-app-theme: mat.define-light-theme( ( color: ( primary: $my-app-primary, accent: $my-app-accent, warn: $my-app-warn, ), ));
+// @include mat.all-component-themes($my-app-theme);
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+
+.mat-toolbar.mat-primary {
+  background: #000000;
+  color: #fff;
+}
+
+.mat-drawer-container {
+  background-color: black !important;
+}
+
+.modalBg {
+  background-color: rgb(24, 22, 22);
+}
+
+.mat-drawer-inner-container{
+  background-color: #000;
+  span{
+    color: white;
+  }
+}
