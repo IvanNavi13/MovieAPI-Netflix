@@ -1,0 +1,49 @@
+<div class="movie-image" [ngStyle]="{ 'background-image' : 'url('+moviesDb.getMovieImage(data.backdrop_path)+')'}">
+    <div class="close-modal">
+        <button mat-icon-button [mat-dialog-close]="data" class="close-button">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="movie-title">
+        {{data.title}}
+    </div>
+</div>
+<mat-grid-list cols="2" rowHeight="56px">
+    <mat-grid-tile class="vote-average" colspan="1">
+        <span>
+            Popularity: {{ data.vote_average /10.0 | percent }}
+        </span>
+    </mat-grid-tile>
+    <mat-grid-tile class="release-date" colspan="1">
+        <span>
+            Date: {{ data.release_date | date }}
+        </span>
+    </mat-grid-tile>
+    <mat-grid-tile class="release-overview" colspan="2" rowspan="3">
+        <span>
+            {{ data.overview }}
+        </span>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="movie-actions">
+    <mat-grid-list cols="6" rowHeight="56px" class="movie-extras">
+        <mat-grid-tile colspan="1">
+            <div class="movie-action no-select" (click)="toggleMyList()">
+                <mat-icon *ngIf="!moviesDb.checkMovieList(data.id)">add</mat-icon>
+                <mat-icon *ngIf="moviesDb.checkMovieList(data.id)">done</mat-icon>
+                <br>
+                <span>Mi Lista</span>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <div class="movie-action no-select" (click)="toggleMyFavorite()">
+                <mat-icon *ngIf="!moviesDb.checkMovieFavorites(data.id)" class="material-icons-outlined">thumb_up</mat-icon>
+                <mat-icon *ngIf="moviesDb.checkMovieFavorites(data.id)">thumb_up</mat-icon>
+                <br>
+                <span>Votar</span>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4"></mat-grid-tile>
+    </mat-grid-list>
+</div>

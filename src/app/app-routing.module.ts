@@ -1,30 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MoviesModule } from './modules/movies/movies.module';
 
-import { FirstComponent } from './components/first/first.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: "home"
+    path : 'list',                                                      //always load modules
+    loadChildren : () => import('./modules/movies/movies.module').then( m => MoviesModule )//<- apply lazyLoading
   },
-  {path: 'home', component: FirstComponent},
-  {path: 'character', component: FirstComponent},
-  {path: 'movie', component: FirstComponent},
-  {path: 'about', component: FirstComponent}
-
-  // {
-  //   path: '',       
-  //   component: NotFoundComponent,
-  //   pathMatch: 'full'
-  // },
-  // {
-  //   path: '**',   
-  //   redirectTo: '404',
-  // }
+  {
+    path : '',
+    redirectTo: 'list',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'list'
+  }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

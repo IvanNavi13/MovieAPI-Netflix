@@ -1,0 +1,4 @@
+<mat-card (click)="openDetail(movie)" class="movie-card" *ngFor="let movie of movies">
+    <img mat-card-image [src]="moviesDb.getMovieImage(movie.poster_path)" alt="">
+    <p>{{movie.title}}</p>
+</mat-card>
