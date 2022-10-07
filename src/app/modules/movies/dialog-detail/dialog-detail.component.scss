@@ -4,6 +4,7 @@
     background-size: cover;
     background-color: #141414;
     position: relative;
+    opacity: 0.65;
 }
 
 .close-button  {
@@ -53,3 +54,10 @@
     align-items: center;
 }
 
+.icon-play{
+    color: white;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: scale(2);
+}

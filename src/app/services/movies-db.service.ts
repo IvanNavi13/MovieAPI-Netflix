@@ -17,12 +17,12 @@ export class MoviesDbService {
     return this.http.get(environment.MOVIES_URL + ApiEndpoints.GENRE_LIST);
   }
   
-  getTrending():Observable<Object>{
-    return this.http.get(environment.MOVIES_URL + ApiEndpoints.TRENDING);
+  getTrending(page: number):Observable<Object>{
+    return this.http.get(environment.MOVIES_URL + ApiEndpoints.getTrendingMovies(page));
   }
 
-  getMoviesByGenre(id: number):Observable<Object>{
-    return this.http.get(environment.MOVIES_URL + ApiEndpoints.getMoviesByGenre(id));
+  getMoviesByGenre(id: number, page: number):Observable<Object>{
+    return this.http.get(environment.MOVIES_URL + ApiEndpoints.getMoviesByGenre(id, page));
   }
   
   getMovieImage(path: string){

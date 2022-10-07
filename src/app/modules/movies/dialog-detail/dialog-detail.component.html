@@ -1,4 +1,5 @@
 <div class="movie-image" [ngStyle]="{ 'background-image' : 'url('+moviesDb.getMovieImage(data.backdrop_path)+')'}">
+    <mat-icon class="icon-play">play_circle_outline</mat-icon>
     <div class="close-modal">
         <button mat-icon-button [mat-dialog-close]="data" class="close-button">
             <mat-icon>close</mat-icon>

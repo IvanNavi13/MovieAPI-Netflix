@@ -6,10 +6,17 @@
 }
 
 .movie-card {
-    margin: 8px;
-    float: left;    //move all to left
+    margin: 15px;
+    float: left; //move all to left
+    // display: inline-block;
 }
 
 .movie-card img {
     margin: 0;
 }
+
+.container{
+    width: 80%;
+    height: auto;
+}
+
